@@ -1,0 +1,99 @@
+body {
+    background-color: black;
+    color: white;
+    display: flex; /* Define um layout flexível para o corpo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Define a altura do body como a altura total da janela */
+    margin: 0; /* Remove margens padrão do body */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px; /* Largura total da área do jogo (canvas + vidas) */
+}
+
+#gameCanvas {
+    display: inline-block;
+}
+
+.vidas {
+    display: flex;
+    flex-direction: column; /* Coloca as naves em coluna */
+    align-items: flex-end; /* Alinha as vidas ao lado direito */
+    padding-left: 20px; /* Espaço entre o canvas e as vidas */
+}
+
+.vidas img {
+    width: 50px; /* Ajuste o tamanho da imagem da nave */
+    margin-bottom: 10px; /* Espaço entre as imagens */
+}
+
+.pontuacao-recorde {
+    display: flex;
+    flex-direction: column; /* Alinha verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    margin-top: 500px; /* Espaçamento superior */
+}
+
+.pontuacao, .recorde2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    color: rgb(14, 14, 150);
+    text-align: center;
+    margin: 5px 0; /* Espaçamento entre os dois elementos */
+    margin-top: 50px;
+}
+
+
+#restartButton{
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px 10px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 51.7%;
+    transform: translateX(-50%);
+    top: 55%; /* Ajuste o valor para posicionar o botão abaixo da pontuação */
+    display: none; /* Inicialmente escondido */
+}
+
+#startButton {
+    position: absolute;
+    top: 50%;
+    left: 51.7%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #004f0c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 2;
+}

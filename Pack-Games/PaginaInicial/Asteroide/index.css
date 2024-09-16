@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    background: rgba(78, 76, 76, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #000000;
+}
+
+.game-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.game {
+    background: #5f5f5f;
+    border: 2px solid #5f5f5f;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    overflow: hidden;
+    width: 45%;
+    transition: transform 0.2s;
+}
+
+
+.game p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #000000;
+}
+
+.game a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #004f0c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 2;
+    font-family: 'Press Start 2P', cursive;
+
+}
