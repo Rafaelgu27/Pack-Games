@@ -1,64 +1,131 @@
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('fundo.jpg');
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+    background-color: black;
+    color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
 }
 
-.container {
-    text-align: center;
-    background: rgba(78, 76, 76, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-}
-
-h1 {
-    color: #000000;
-}
-
-.game-selection {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.game {
-    background: #5f5f5f;
-    border: 2px solid #5f5f5f;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-    overflow: hidden;
+#logo {
     width: 45%;
-    transition: transform 0.2s;
+    position: absolute; 
+    left: 27.5%; /* Mudado de 'rem' para '%' */
+    top: 5%; /* Mudado de 'rem' para '%' */
+    justify-content: center; /* Centraliza horizontalmente */
 }
 
-.game img {
-    width: 100%;
-    height: auto;
+#hifen {
+    width: 3%;
+    position: absolute;
+    left: 47.5%; /* Mudado de 'rem' para '%' */
+    top: 9.5%; /* Mudado de 'rem' para '%' */
 }
 
-.game p {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #000000;
+.asteroids {
+    position: absolute;
+    left: 70%; /* Mudado de 'rem' para '%' */
+    top: 32%; /* Mudado de 'rem' para '%' */
 }
 
-.game a {
+.cobra {
+    position: absolute;
+    left: 40%; /* Mudado de 'rem' para '%' */
+    top: 32%; /* Mudado de 'rem' para '%' */
+}
+
+.pacman {
+    position: absolute;
+    left: 10%; /* Mudado de 'rem' para '%' */
+    top: 32%; /* Mudado de 'rem' para '%' */
+}
+
+.pong {
+    position: absolute;
+    left: 25%; /* Mudado de 'rem' para '%' */
+    top: 65%; /* Mudado de 'rem' para '%' */
+}
+
+.tetris {
+    position: absolute;
+    left: 55%; /* Mudado de 'rem' para '%' */
+    top: 65%; /* Mudado de 'rem' para '%' */
+}
+
+.asteroids, .cobra, .pacman, .pong, .tetris {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: border-color 0.3s, padding 0.3s;
+}
+
+.asteroids:hover, .cobra:hover, .pacman:hover, .pong:hover, .tetris:hover {
+    border-color: orange;
+    padding: 14px;
+}
+
+a {
     text-decoration: none;
-    color: inherit;
-    display: block;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
 }
 
-.game:hover {
-    transform: scale(1.05);
+.pacman-animacao {
+    position: absolute;
+    top: 50%;
+    left: -55vw; /* Mudado de 'px' para 'vw' */
+    width: auto;
+    height: 10vh; /* Usando 'vh' para altura */
+    z-index: 9999;
+    display: flex; 
+    align-items: center; 
+    transition: left 3s linear;
+}
+
+.pacman-animacao img {
+    width: 10vh; /* Usando 'vh' para manter a proporção */
+    z-index: 1;
+}
+
+.pacman-animacao2 {
+    position: absolute;
+    top: 50%;
+    right: -25vw;
+    display: none; /* Inicialmente oculto */
+    z-index: 9999;
+    transition: right 3s linear; /* Animação ao mover para a esquerda */
+}
+
+.assustado {
+    width: 10vh; /* Usando 'vh' para altura */
+    height: 10vh;
+}
+
+#pacman-animacao2 {
+    width: 10vh; /* Usando 'vh' para altura */
+    height: 10vh; /* Mantendo proporção */
+    transform: scaleX(-1); 
+}
+
+.asteroid {
+    position: absolute;
+    width: 5vw; /* Mudado de 'px' para 'vw' */
+    height: 5vw; /* Mudado de 'px' para 'vw' */
+    background-size: cover;
+    transition: transform 10s linear;
+}
+
+.asteroid-mover {
+    transform: translateX(100vw);
+}
+
+.quadro {
+    position: fixed; /* Para cobrir toda a tela */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Largura da tela */
+    height: 100vh; /* Altura da tela */
+    pointer-events: none; /* Evita interação com os quadrados */
+}
+
+.pong-gif {
+    display: none; /* Esconde o GIF inicialmente */
 }

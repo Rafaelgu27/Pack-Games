@@ -3,9 +3,8 @@ const ctx = canvas.getContext('2d');
 
 function resizeCanvas() {
     const canvas = document.querySelector('canvas');
-    canvas.width = 1100;
-    canvas.height = 930;
-
+    canvas.width = 1500 * 0.9;
+    canvas.height = canvas.width * 0.75; // Mantém a proporção de 4:3, por exemplo;
 }
 
 window.addEventListener('resize', resizeCanvas);
@@ -164,7 +163,7 @@ class Fantasma {
             { x: 0, y: -1 }
         ];
         this.currentDirection = this.directions[Math.floor(Math.random() * this.directions.length)];
-        this.moveSpeed = 5;
+        this.moveSpeed = 1;
         this.changeDirectionInterval = 1;
         this.lastDirectionChange = Date.now();
         this.randomDirectionChangeProb = 0.1;
@@ -420,7 +419,7 @@ window.addEventListener("keydown", function (event) {
             startButton.click(); // Simula um clique no botão de iniciar o jogo
         }
     } else if(tecla === 27){
-        document.querySelector('.botao-voltar').click();
+        window.location.href = "../inicio.html";
     }
 
     if (gameState === 'gameOver') {
@@ -807,7 +806,7 @@ function iniciarJogo() {
     fantasmasMovendo = false; // Fantasmas não se movem ainda 
     pontos.length = 0;
     fantasmas.length = 0;
-    vidas = 5; // Ajuste a quantidade de vidas conforme necessário
+    vidas = 1; // Ajuste a quantidade de vidas conforme necessário
     gameState = 'playing'; // Reseta o estado do jogo ao iniciar
 
     // Esconder o botão de reinício
@@ -856,6 +855,9 @@ function iniciarJogo() {
 
 
 function desenharGameOver() {
+
+    pacman.x = 9999;
+    pacman.y = 9999;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -864,20 +866,17 @@ function desenharGameOver() {
     ctx.font = '48px Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('Game Over!', canvas.width / 2, canvas.height / 2);
+    ctx.fillText('Game Over!', 470, 500);
 
     ctx.font = '24px Arial';
-    ctx.fillText('Pontuação final: ' + pontuacao, canvas.width / 2, canvas.height / 2 + 50);
+    ctx.fillText('Pontuação final: ' , 450, 550);
+
+    ctx.font = '24px Arial';
+    ctx.fillText(pontuacao, 570, 550);
 
     // Exibir o botão de reiniciar
     const restartButton = document.getElementById('restartButton');
     restartButton.style.display = 'block';
-
-    if (tecla === 13) { // Verifica se a tecla pressionada é Enter
-        if (!restartButton.classList.contains('hidden')) {
-            restartButton.click(); // Simula um clique no botão de iniciar o jogo
-        }    
-    }
 }
 
 function verificarVitoria() {
@@ -916,9 +915,12 @@ function atualizar() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('startButton');
+    startButton.style.display = 'block';
     let gameStarted = false;
 
     startButton.addEventListener('click', () => {
+        startButton.style.display = 'none';
+
         gameStarted = true;
         startButton.classList.add('hidden');
         // Iniciar o jogo aqui

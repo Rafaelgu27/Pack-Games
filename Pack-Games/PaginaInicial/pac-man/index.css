@@ -2,86 +2,84 @@ body {
     margin: 0;
     background-color: black;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 90vh;
     font-family: 'Press Start 2P', cursive;
 }
 
 canvas {
-
-    padding: center;
     display: block;
-
+    height: auto; /* Mantém a proporção do canvas */
+    margin-top: 15vh;
+    margin-left: 40vh;
+    max-width: 100%; /* Não deixa o canvas passar da largura da tela */
+    max-height: 100%; /* Não deixa o canvas passar da altura da tela */
 }
 
-#restartButton{
+#restartButton, #startButton {
     border: none;
     border-radius: 100px;
-    padding: 10px 15px 10px 12px;
+    padding: 10px 15px;
     font-size: 1rem;
     font-weight: 600;
     color: #333;
-    margin-top: 40px;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
     position: absolute;
-    left: 50%;
     transform: translateX(-50%);
-    top: 55%; /* Ajuste o valor para posicionar o botão abaixo da pontuação */
-    display: none; /* Inicialmente escondido */
+    display: none; /* Escondido até ser ativado */
+    cursor: pointer;
+}
+
+#restartButton {
+    top: 62%; /* Colocado abaixo da pontuação */
+    left: 50%;
+
+}
+
+#startButton {
+    top: 50%;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px 30px;
+    font-size: 2vh; /* Usa unidades responsivas baseadas na altura da tela */
+    z-index: 1000;
+    font-family: 'Press Start 2P', cursive;
+    left: 95vh;
+}
+
+#startButton:active {
+    background-color: orange;
 }
 
 .botao-voltar {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 2vh;
+    left: 2vw;
     background-color: #004f0c;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 1vh 2vw;
+    font-size: 2vh;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
     z-index: 2;
 }
 
-.botao-mute{
+.botao-mute {
     position: absolute;
-    right: 10px;
+    right: 2vw;
+    top: 2vh;
     background-color: #004f0c;
     color: white;
     border: none;
     border-radius: 50%;
-    padding: 10px;
-    font-size: 1.2rem;
+    padding: 1vh;
+    font-size: 2vh;
     cursor: pointer;
     z-index: 2;
-    top: 10px;
-
-}
-
-#startButton {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: yellow;
-    border: 2px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 1000;
-    font-family: 'Press Start 2P', cursive;
-}
-
-#startButton:active {
-    background-color: orange;
 }
 
 .hidden {
