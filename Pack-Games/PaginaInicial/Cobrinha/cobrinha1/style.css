@@ -7,6 +7,24 @@
     font-family: "Poppins", sans-serif;
 }
 
+#restartButton {
+    border: none;
+    border-radius: 100px;
+    padding: 1vh 2vw;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1000;
+}
+
 body {
     background-color: #151414;
     display: flex;

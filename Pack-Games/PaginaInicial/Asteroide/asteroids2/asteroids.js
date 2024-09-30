@@ -3,17 +3,19 @@ const ctx = canvas.getContext('2d');
 
 // Ajusta o tamanho do canvas
 function ajustarCanvas() {
-    canvas.width = 1300;
-    canvas.height = 1230;
+    const canvas = document.querySelector('canvas');
+    canvas.width = 1200 * 0.9; // Aumente para 1800 ou qualquer outro valor desejado
+    canvas.height = canvas.width * 0.75; // Ajuste a proporção se necessári   
 }
+
 
 // Carrega e desenha o fundo
 const fundo = new Image();
-fundo.src = 'img/espaco.png';
+fundo.src = '../img/espaco.png';
 
 // Imagem do tiro
 const tiroImagem = new Image();
-tiroImagem.src = 'img/tiro.png';
+tiroImagem.src = '../img/tiro.png';
 
 let nave;
 let teclas = { esquerda: false, direita: false, frente: false, espaco: false };
@@ -35,7 +37,7 @@ const iniciarButton = document.getElementById('startButton')
 let pontuacao = 0;
 let recorde2 = 0;
 
-let vidas = 5;
+let vidas = 1;
 const spanVidas = document.querySelector('.vidas');
 
 // Atualizar vidas com imagens de naves
@@ -43,7 +45,7 @@ function atualizarVidas() {
     spanVidas.innerHTML = ''; // Limpa o conteúdo atual
     for (let i = 0; i < vidas; i++) {
         const img = document.createElement('img');
-        img.src = 'img/nav2.png'; // Caminho da imagem da nave
+        img.src = '../img/nav2.png'; // Caminho da imagem da nave
         img.style.display = 'block'; // Para que cada nave apareça uma abaixo da outra
         img.style.marginBottom = '5px'; // Opcional: ajuste para dar espaço entre as naves
         spanVidas.appendChild(img);
@@ -63,11 +65,11 @@ class Nave {
 
         // Imagem da nave
         this.imagem = new Image();
-        this.imagem.src = 'img/nav1.png';
+        this.imagem.src = '../img/nav1.png';
 
         // Defina o tamanho da nave
-        this.largura = 50;
-        this.altura = 50;
+        this.largura = 40;
+        this.altura = 40;
     }
 
     desenhar() {
@@ -139,9 +141,9 @@ class Nave {
 
 // Imagens dos asteroides
 const asteroideImagens = [
-    'img/as1.png', // Maior
-    'img/as2.png', // Médio
-    'img/as3.png'  // Menor
+    '../img/as1.png', // Maior
+    '../img/as2.png', // Médio
+    '../img/as3.png'  // Menor
 ];
 
 // Lista de asteroides
@@ -388,7 +390,7 @@ window.addEventListener('keydown', (e) => {
     } else if (e.keyCode === 13) { // Código da tecla Enter
         iniciarJogo(); // Inicia o jogo ao pressionar Enter
     } else if(e.keyCode === 27){
-        document.querySelector('.botao-voltar').click();
+        window.location.href = "../index.html";
     }
 
     restartButton.addEventListener('click', () => {
@@ -402,8 +404,6 @@ window.addEventListener('keyup', (e) => {
         teclas.esquerda = false;
     } else if (e.keyCode === 39) { // Código da seta para a direita
         teclas.direita = false;
-    } else if (e.keyCode === 38) { // Código da seta para cima
-        teclas.frente = false;
     } else if (e.keyCode === 32) { // Código da tecla Espaço
         teclas.espaco = false;
     }
@@ -418,10 +418,10 @@ function desenharGameOver() {
     ctx.font = '48px Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('Game Over!', canvas.width / 2, canvas.height / 2);
+    ctx.fillText('Game Over!', 550, 350);
 
     ctx.font = '24px Arial';
-    ctx.fillText('Pontuação final: ' + pontuacao, canvas.width / 2, canvas.height / 2 + 50);
+    ctx.fillText('Pontuação final: ' + pontuacao, 550, 400);
 
     // Exibir o botão de reiniciar
     const restartButton = document.getElementById('restartButton');
@@ -466,7 +466,6 @@ function iniciarJogo() {
 }
 
 iniciarButton.addEventListener('click', iniciarJogo);
-
 
 carregarRecorde();
 ajustarCanvas();

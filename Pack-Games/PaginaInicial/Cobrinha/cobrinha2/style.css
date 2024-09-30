@@ -7,6 +7,24 @@
     font-family: "Poppins", sans-serif;
 }
 
+#restartButton {
+    border: none;
+    border-radius: 100px;
+    padding: 1vh 2vw;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1000;
+}
+
 body {
     background-color: #151414;
     display: flex;
@@ -72,34 +90,6 @@ canvas {
     font-weight: 500;
     font-size: 1.5rem;
     display: block;
-}
-
-.modo-jogo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-}
-
-.botao-single, .botao-multiplayer {
-    background-color: #004f0c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
 }
 
 .botao-voltar {

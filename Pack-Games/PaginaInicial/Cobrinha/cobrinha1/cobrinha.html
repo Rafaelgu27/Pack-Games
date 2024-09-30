@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Jogo da Cobrinha</title>
 </head>
 <body>
-    <a href="../inicio.html" title="Pressione 'ESC' para sair" class="botao-voltar">← Voltar</a>
+    <a href="../index.html" title="Pressione 'ESC' para sair" class="botao-voltar">← Voltar</a>
 
     <div class="pontuacao">
         Pontuação: <span class="pontuacao--valor">00</span>
@@ -22,14 +22,19 @@
         <span class="pontuacao-final">Pontuação: <span>00</span></span>
     </div>
 
-    <div class="modo-jogo">
-        <button class="botao-single">Single Player</button>
-        <button class="botao-multiplayer">Multiplayer</button>
-    </div>
+    <button id="restartButton">► Jogar Novamente</button>
 
     <canvas width="570" height="570" style="border: 15px solid #004f0c;"></canvas>
 
-    <div class="instrucoes"></div>
+    <div class="instrucoes">
+
+        <p>Use as setas para mover a cobra.</p>
+        
+        <br>
+        <br>
+
+        <img src="setas.png" alt="">
+    </div>
 
     <button class="botao-mute" title="Pressione 'M' para mutar o som">🔊</button>
 
@@ -39,6 +44,6 @@
         © 2024 Parte do projeto desenvolvida com recursos do canal Manual do Dev
     </div>
     
-    <script src="./js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
